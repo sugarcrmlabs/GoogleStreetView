@@ -1,0 +1,31 @@
+<style>
+    .my-dropdown {
+        position: relative;
+        margin-left: -7px;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .record-cell  input[type="text"].categ-name {
+        width: 80%;
+        display: inline-block;
+    }
+
+    .record-cell  input[type="text"].categ-color {
+        width: 15%;
+        display: inline-block;
+    }
+</style>
+<div class="row-fluid">
+    <div class="span12 record-cell" style="padding: 0px">
+        <div class="span8 record-cell" style="padding: 0px">
+            <div class="record-label" style="margin-bottom: 7px; width: 80%;display: inline-block;">Field</div>
+            <select name="field" class="inherit-width my-dropdown" aria-label="Field">
+                <option value="">Select a Field</option>
+                {{#each fields}}
+                    <option value="{{@key}}" {{#eq ../selectedField @key}}selected="selected"{{/eq}}>{{this}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+</div>
